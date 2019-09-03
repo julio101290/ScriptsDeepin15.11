@@ -1,0 +1,38 @@
+Editamos el archivo
+
+sudo gedit /etc/init.d/lampp
+
+ESCRIBIR EN EL ARCHIVO LO SIGUIENTE
+
+#!/bin/bash
+
+### BEGIN INIT INFO
+
+# Provides: lampp
+
+# Required-Start: $local_fs $syslog $remote_fs dbus
+
+# Required-Stop: $local_fs $syslog $remote_fs
+
+# Default-Start: 2 3 4 5
+
+# Default-Stop: 0 1 6
+
+# Short-Description: Start lampp
+
+### END INIT INFO
+
+/opt/lampp/lampp start
+Guardamos
+Le asignamos el bit de ejecutable al archivo
+sudo chmod +x /etc/init.d/lampp
+
+
+Actualizamos con el siguiente comando
+
+sudo update-rc.d lampp defaults
+Y reiniciamos con el siguiente comando
+reboot
+Una vez reiniciada la PC abrimos el XAMPP Manager para verificar si los servicios están iniciados, en este punto ya deben de estar iniciados
+
+Saludos y espero que les sirva
